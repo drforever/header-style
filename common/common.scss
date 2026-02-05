@@ -65,16 +65,16 @@
 }
 
 .d-header .anonymous-toggle-btn.is-anonymous {
-  background-color: #{$header_text_color} !important;
-  color: #{$header_bg_color} !important;
-  border-color: #{$header_text_color} !important;
+  background-color: transparent !important;
+  color: #{$header_text_color} !important;
+  border: none !important;
   
   .d-icon {
-    color: #{$header_bg_color} !important;
+    color: #{$header_text_color} !important;
   }
   
   &:hover {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
   }
 }
 
