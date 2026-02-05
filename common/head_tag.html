@@ -1,7 +1,13 @@
+<!-- 引入站酷快乐体 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+
 <style id="header-style-critical">
-/* 关键样式 - 最早加载，防止闪烁 */
+/* 关键样式 - 在 head 中最早加载 */
 .d-header-wrap .d-header,
-.d-header {
+.d-header,
+header.d-header {
   background-color: #005dd9 !important;
   background: #005dd9 !important;
 }
@@ -17,5 +23,16 @@
 
 .d-header svg.d-icon {
   fill: currentColor !important;
+}
+
+/* 站点标题使用站酷快乐体 */
+.d-header .title a,
+.d-header .title .header-title,
+.d-header .home-logo-wrapper-outlet a,
+#site-logo,
+.header-title {
+  font-family: 'ZCOOL KuaiLe', cursive, sans-serif !important;
+  font-size: 1.4em !important;
+  letter-spacing: 1px !important;
 }
 </style>
