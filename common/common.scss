@@ -1,0 +1,110 @@
+/* 顶部导航栏样式组件 */
+/* 使用固定颜色值确保稳定性 */
+
+// 导航栏背景
+.d-header-wrap .d-header {
+  background-color: #{$header_bg_color} !important;
+  border-bottom: none !important;
+}
+
+// 站点标题和Logo
+.d-header .title a,
+.d-header .title .header-title,
+.d-header-wrap .d-header .title a {
+  color: #{$header_text_color} !important;
+}
+
+// 所有图标
+.d-header .d-icon,
+.d-header .btn .d-icon,
+.d-header .btn-flat .d-icon,
+.d-header .header-dropdown-toggle .d-icon,
+.d-header-wrap .d-header .d-icon {
+  color: #{$header_text_color} !important;
+}
+
+// 按钮
+.d-header .btn,
+.d-header .btn-flat,
+.d-header .icon,
+.d-header .header-buttons button {
+  color: #{$header_text_color} !important;
+}
+
+// 汉堡菜单图标
+.d-header .hamburger-dropdown .d-icon,
+.d-header .menu-panel .d-icon {
+  color: #{$header_text_color} !important;
+}
+
+// 搜索图标
+.d-header .search-dropdown .d-icon,
+.d-header .search-button .d-icon {
+  color: #{$header_text_color} !important;
+}
+
+// 用户头像边框
+.d-header .current-user .avatar {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+// 匿名发言按钮 - 在蓝色导航栏上的样式
+.d-header .anonymous-toggle-btn {
+  border-color: #{$header_text_color} !important;
+  color: #{$header_text_color} !important;
+  background-color: transparent !important;
+  
+  .d-icon {
+    color: #{$header_text_color} !important;
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+}
+
+.d-header .anonymous-toggle-btn.is-anonymous {
+  background-color: #{$header_text_color} !important;
+  color: #{$header_bg_color} !important;
+  border-color: #{$header_text_color} !important;
+  
+  .d-icon {
+    color: #{$header_bg_color} !important;
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
+// 下拉菜单箭头
+.d-header .anonymous-toggle-btn .d-icon-caret-down {
+  color: inherit !important;
+}
+
+// 确保hover状态也使用固定颜色
+.d-header .btn:hover,
+.d-header .btn-flat:hover,
+.d-header .icon:hover {
+  color: #{$header_text_color} !important;
+  
+  .d-icon {
+    color: #{$header_text_color} !important;
+  }
+}
+
+// 下拉面板保持正常颜色（不受导航栏影响）
+.d-header .menu-panel,
+.d-header .user-menu,
+.d-header .search-menu {
+  background-color: var(--secondary) !important;
+  
+  .d-icon {
+    color: var(--primary) !important;
+  }
+  
+  a, button, .btn {
+    color: var(--primary) !important;
+  }
+}

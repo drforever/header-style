@@ -1,0 +1,7 @@
+zh_CN:
+  theme_metadata:
+    description: "自定义导航栏样式，颜色稳定不闪烁"
+    settings:
+      header_style_enabled: "启用自定义导航栏样式"
+      header_bg_color: "导航栏背景颜色"
+      header_text_color: "导航栏文字颜色"

@@ -1,0 +1,7 @@
+en:
+  theme_metadata:
+    description: "Custom header navigation bar style with stable colors"
+    settings:
+      header_style_enabled: "Enable custom header style"
+      header_bg_color: "Header background color"
+      header_text_color: "Header text color"

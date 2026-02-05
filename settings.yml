@@ -1,0 +1,14 @@
+header_style_enabled:
+  default: true
+  type: bool
+  description: "启用自定义导航栏样式"
+
+header_bg_color:
+  default: "#005dd9"
+  type: string
+  description: "导航栏背景颜色"
+
+header_text_color:
+  default: "#ffffff"
+  type: string
+  description: "导航栏文字颜色"
