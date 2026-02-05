@@ -1,46 +1,57 @@
 /* 顶部导航栏样式组件 */
-/* 使用固定颜色值确保稳定性 */
+/* 使用最高优先级确保稳定性 */
 
-// 导航栏背景
-.d-header-wrap .d-header {
-  background-color: #{$header_bg_color} !important;
+// 使用多重选择器提高优先级，确保覆盖所有情况
+html body .d-header-wrap .d-header,
+html .d-header-wrap .d-header,
+.d-header-wrap .d-header,
+.d-header {
+  background-color: #005dd9 !important; // 腾讯蓝，硬编码确保稳定
+  background: #005dd9 !important;
   border-bottom: none !important;
 }
 
 // 站点标题和Logo
+html body .d-header .title a,
+html body .d-header .title .header-title,
 .d-header .title a,
 .d-header .title .header-title,
 .d-header-wrap .d-header .title a {
-  color: #{$header_text_color} !important;
+  color: #ffffff !important;
 }
 
-// 所有图标
+// 所有图标 - 使用最广泛的选择器
+html body .d-header .d-icon,
 .d-header .d-icon,
 .d-header .btn .d-icon,
 .d-header .btn-flat .d-icon,
 .d-header .header-dropdown-toggle .d-icon,
-.d-header-wrap .d-header .d-icon {
-  color: #{$header_text_color} !important;
+.d-header-wrap .d-header .d-icon,
+.d-header svg.d-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 // 按钮
+html body .d-header .btn,
+html body .d-header .btn-flat,
 .d-header .btn,
 .d-header .btn-flat,
 .d-header .icon,
 .d-header .header-buttons button {
-  color: #{$header_text_color} !important;
+  color: #ffffff !important;
 }
 
 // 汉堡菜单图标
 .d-header .hamburger-dropdown .d-icon,
 .d-header .menu-panel .d-icon {
-  color: #{$header_text_color} !important;
+  color: #ffffff !important;
 }
 
 // 搜索图标
 .d-header .search-dropdown .d-icon,
 .d-header .search-button .d-icon {
-  color: #{$header_text_color} !important;
+  color: #ffffff !important;
 }
 
 // 用户头像边框
@@ -49,32 +60,39 @@
   border-radius: 50%;
 }
 
-// 匿名发言按钮 - 在蓝色导航栏上的样式
+// 匿名模式按钮 - 非激活状态
+html body .d-header .anonymous-toggle-btn,
 .d-header .anonymous-toggle-btn {
-  border-color: #{$header_text_color} !important;
-  color: #{$header_text_color} !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
   background-color: transparent !important;
+  background: transparent !important;
   
   .d-icon {
-    color: #{$header_text_color} !important;
+    color: #ffffff !important;
   }
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
   }
 }
 
+// 匿名模式按钮 - 激活状态
+html body .d-header .anonymous-toggle-btn.is-anonymous,
 .d-header .anonymous-toggle-btn.is-anonymous {
   background-color: transparent !important;
-  color: #{$header_text_color} !important;
+  background: transparent !important;
+  color: #ffffff !important;
   border: none !important;
   
   .d-icon {
-    color: #{$header_text_color} !important;
+    color: #ffffff !important;
   }
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
   }
 }
 
@@ -84,27 +102,32 @@
 }
 
 // 确保hover状态也使用固定颜色
+html body .d-header .btn:hover,
+html body .d-header .btn-flat:hover,
 .d-header .btn:hover,
 .d-header .btn-flat:hover,
 .d-header .icon:hover {
-  color: #{$header_text_color} !important;
+  color: #ffffff !important;
   
   .d-icon {
-    color: #{$header_text_color} !important;
+    color: #ffffff !important;
   }
 }
 
 // 下拉面板保持正常颜色（不受导航栏影响）
 .d-header .menu-panel,
 .d-header .user-menu,
-.d-header .search-menu {
-  background-color: var(--secondary) !important;
+.d-header .search-menu,
+.menu-panel,
+.user-menu {
+  background-color: var(--secondary, #ffffff) !important;
+  background: var(--secondary, #ffffff) !important;
   
   .d-icon {
-    color: var(--primary) !important;
+    color: var(--primary, #333333) !important;
   }
   
   a, button, .btn {
-    color: var(--primary) !important;
+    color: var(--primary, #333333) !important;
   }
 }
