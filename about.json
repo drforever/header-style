@@ -3,6 +3,8 @@
   "about_url": "",
   "license_url": "",
   "component": true,
-  "assets": {},
+  "assets": {
+    "tencent-w7": "assets/tencentw7.ttf"
+  },
   "color_schemes": {}
 }
