@@ -1,6 +1,14 @@
 /* 顶部导航栏样式组件 */
 /* 使用最高优先级确保稳定性 */
 
+// 自定义字体
+@font-face {
+  font-family: 'CustomTitle';
+  src: url($w7) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // 使用多重选择器提高优先级，确保覆盖所有情况
 html body .d-header-wrap .d-header,
 html .d-header-wrap .d-header,
@@ -11,13 +19,14 @@ html .d-header-wrap .d-header,
   border-bottom: none !important;
 }
 
-// 站点标题和Logo
+// 站点标题和Logo - 使用自定义字体
 html body .d-header .title a,
 html body .d-header .title .header-title,
 .d-header .title a,
 .d-header .title .header-title,
 .d-header-wrap .d-header .title a {
   color: #ffffff !important;
+  font-family: 'CustomTitle', sans-serif !important;
 }
 
 // 所有图标 - 使用最广泛的选择器
