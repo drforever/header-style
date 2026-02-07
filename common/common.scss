@@ -114,77 +114,12 @@ html body .d-header .btn-flat,
   color: #ffffff !important;
 }
 
-// 搜索图标
-.d-header .search-dropdown .d-icon,
-.d-header .search-button .d-icon {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
 // ============================================
-// 搜索框样式 - 圆角输入框样式
+// 隐藏原始搜索按钮（用内嵌搜索框替代）
 // ============================================
-
-// 搜索框父容器垂直居中
-html body .d-header .icons .search-dropdown,
-.d-header .icons .search-dropdown {
-  align-self: center !important;
-}
-
 html body .d-header .search-dropdown,
 .d-header .search-dropdown {
-  display: flex !important;
-  align-items: center !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 20px !important;
-  padding: 0 !important;
-  min-width: 180px !important;
-  height: 32px !important;
-  margin-right: 12px !important;
-  margin-top: auto !important;
-  margin-bottom: auto !important;
-  transition: all 0.2s ease !important;
-  cursor: pointer !important;
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-  }
-  
-  // 搜索按钮 - 只显示图标，缩小占用空间
-  #search-button,
-  .btn {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 10px !important;
-    height: 100% !important;
-    width: auto !important;
-    min-width: auto !important;
-    cursor: pointer !important;
-    flex-shrink: 0 !important;
-    
-    .d-icon {
-      color: rgba(255, 255, 255, 0.5) !important;
-      width: 14px !important;
-      height: 14px !important;
-    }
-  }
-  
-  // placeholder 文本 - 模拟输入框占位符
-  .search-placeholder-text {
-    flex: 1 !important;
-    color: rgba(255, 255, 255, 0.4) !important;
-    font-size: 13px !important;
-    line-height: 32px !important;
-    pointer-events: none !important;
-    user-select: none !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    padding-right: 12px !important;
-  }
+  display: none !important;
 }
 
 // 确保图标列表垂直居中
@@ -192,6 +127,184 @@ html body .d-header .icons,
 .d-header .icons {
   display: flex !important;
   align-items: center !important;
+}
+
+// ============================================
+// 内嵌搜索框 - 圆角搜索栏（放大镜 + 真实输入框）
+// ============================================
+.d-header .before-header-panel-outlet {
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 !important;
+  justify-content: flex-end !important;
+  padding-right: 8px !important;
+}
+
+.header-inline-search {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 20px !important;
+  min-width: 220px !important;
+  max-width: 320px !important;
+  height: 32px !important;
+  transition: all 0.2s ease !important;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  &:focus-within {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  // 左侧放大镜图标（纯装饰）
+  &__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 4px 0 12px !important;
+    flex-shrink: 0 !important;
+    pointer-events: none !important;
+
+    .d-icon {
+      color: rgba(255, 255, 255, 0.5) !important;
+      fill: rgba(255, 255, 255, 0.5) !important;
+      width: 14px !important;
+      height: 14px !important;
+    }
+  }
+
+  // SearchMenu 容器
+  .search-menu-container {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    position: static !important;
+    min-width: 0 !important;
+  }
+
+  // 输入框包装器
+  .search-input-wrapper {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    min-width: 0 !important;
+  }
+
+  .search-input {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+
+    &:focus-within {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+
+  // 真实搜索输入框
+  .search-term__input {
+    flex: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    padding: 0 8px 0 4px !important;
+    height: 30px !important;
+    min-width: 0 !important;
+    caret-color: #ffffff !important;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  // 加载、清除、高级搜索等按钮区
+  .searching {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    padding-right: 4px !important;
+
+    .btn {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 6px !important;
+      min-width: auto !important;
+      height: auto !important;
+
+      .d-icon {
+        color: rgba(255, 255, 255, 0.5) !important;
+        fill: rgba(255, 255, 255, 0.5) !important;
+        width: 12px !important;
+        height: 12px !important;
+      }
+
+      &:hover .d-icon {
+        color: rgba(255, 255, 255, 0.8) !important;
+        fill: rgba(255, 255, 255, 0.8) !important;
+      }
+    }
+  }
+
+  // 下拉结果面板 - 定位到搜索栏下方
+  .search-menu-panel {
+    position: absolute !important;
+    top: calc(100% + 6px) !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 420px !important;
+    max-width: 90vw !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15) !important;
+    z-index: 1000 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+
+    .panel-body-contents {
+      max-height: 400px !important;
+      overflow-y: auto !important;
+      padding: 0 !important;
+    }
+  }
+
+  // topic context 标签
+  .search-context {
+    flex-shrink: 0 !important;
+    margin: 0 4px !important;
+    padding: 2px 8px !important;
+    font-size: 11px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+
+    .d-icon {
+      color: #ffffff !important;
+      fill: #ffffff !important;
+    }
+  }
 }
 
 // 用户头像边框
@@ -344,161 +457,244 @@ html body .user-menu.revamped .panel-body-bottom .btn-primary {
 }
 
 // ============================================
-// 搜索框下拉浮层样式
+// 搜索下拉面板内容样式
 // ============================================
 
-// 搜索菜单主容器
-.glimmer-search-menu {
-  display: block !important;
-  visibility: visible !important;
+// 隐藏原始搜索弹框（SearchMenuWrapper 由 search.visible 控制的）
+.d-header .search-menu.glimmer-search-menu {
+  display: none !important;
 }
 
-// 搜索菜单容器
-.glimmer-search-menu .search-menu-container {
-  position: relative;
-}
+// 搜索面板内元素颜色修正（覆盖 header 的白色规则）
+.header-inline-search .search-menu-panel {
+  * {
+    color: #333333;
+  }
 
-// 搜索输入框包装器
-.glimmer-search-menu .search-input-wrapper {
-  position: relative;
-  z-index: 1001;
-}
+  .d-icon,
+  svg {
+    color: #666666 !important;
+    fill: #666666 !important;
+  }
 
-// 菜单面板样式
-.glimmer-search-menu .search-menu-panel {
-  position: fixed !important;
-  top: auto !important;
-  left: 50%;
-  transform: translateX(-50%);
-  right: auto !important;
-  bottom: auto !important;
-  width: calc(100% - 32px) !important;
-  max-width: 420px !important;
-  background: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15) !important;
-  z-index: 1000 !important;
-  margin-top: 8px !important;
-  padding: 0 !important;
-}
+  .btn {
+    color: #333333 !important;
 
-// 菜单面板内容
-.glimmer-search-menu .search-menu-panel .panel-body-contents {
-  max-height: 400px !important;
-  overflow-y: auto !important;
-  padding: 0 !important;
-}
+    .d-icon {
+      color: #666666 !important;
+      fill: #666666 !important;
+    }
+  }
 
-// 搜索框获得焦点时的样式
-.d-header .search-dropdown.focused {
-  background: rgba(255, 255, 255, 0.15) !important;
-}
-
-// 结果区域美化
-.search-menu-container {
+  // 结果区域
   .results {
     border-radius: 0 !important;
     background: transparent !important;
-    
-    // 搜索结果分类标题
+    padding: 0 !important;
+
+    // 搜索结果分类标题（如 "话题"）
     .heading {
-      padding: 12px 16px !important;
-      
+      padding: 8px 16px 4px !important;
+
       &:not(:first-child) {
-        padding-top: 8px !important;
-        border-top: 1px solid rgba(0, 0, 0, 0.04) !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
         margin-top: 4px !important;
       }
-      
+
       h4 {
         margin: 0 !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
         font-weight: 600 !important;
         color: #999999 !important;
         text-transform: uppercase !important;
         letter-spacing: 0.5px !important;
-        line-height: 1.2 !important;
       }
     }
-    
-    // 搜索结果项
-    .search-link {
-      display: flex;
-      align-items: center;
-      padding: 10px 16px !important;
-      margin: 0 !important;
-      border: none !important;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.02) !important;
-      background: transparent !important;
-      cursor: pointer;
-      transition: all 0.12s ease !important;
-      
-      &:last-child {
-        border-bottom: none !important;
+
+    // ---- topic/post 搜索结果 ----
+    .search-result-topic,
+    .search-result-post {
+      .list {
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
       }
-      
-      &:hover {
-        background-color: #f8f8f8 !important;
-      }
-      
-      &:focus {
-        background-color: #f5f5f5 !important;
-        outline: none !important;
-      }
-      
-      // 结果文本内容
-      .search-item-tag {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        
-        .d-icon {
-          color: #d3d3d3 !important;
-          font-size: 13px !important;
-          flex-shrink: 0;
+
+      .item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+
+        &:last-child {
+          border-bottom: none !important;
         }
-        
-        span {
-          color: #333333 !important;
-          font-size: 13px !important;
-          line-height: 1.4 !important;
-          word-break: break-word;
+      }
+
+      .search-link {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px 16px !important;
+        gap: 4px !important;
+        text-decoration: none !important;
+        transition: background 0.12s ease !important;
+
+        &:hover {
+          background-color: #f5f7fa !important;
+        }
+
+        &:focus {
+          background-color: #f0f2f5 !important;
+          outline: none !important;
+        }
+      }
+
+      // topic 容器 - 垂直排列
+      .topic {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2px !important;
+        width: 100% !important;
+      }
+
+      .first-line {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+      }
+
+      // 标题
+      .topic-title {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #1a1a1a !important;
+        line-height: 1.4 !important;
+        overflow-wrap: anywhere !important;
+
+        a {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+      }
+
+      // 第二行：分类 + 标签
+      .second-line {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px 8px !important;
+        margin-top: 2px !important;
+
+        .badge-category__wrapper {
+          font-size: 12px !important;
+        }
+
+        .discourse-tag {
+          font-size: 11px !important;
+          color: #888 !important;
+        }
+      }
+
+      // 摘要
+      .blurb {
+        font-size: 13px !important;
+        color: #666666 !important;
+        line-height: 1.5 !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        width: 100% !important;
+      }
+
+      .blurb__separator {
+        color: #999 !important;
+      }
+    }
+
+    // ---- 分类/标签/用户/组 结果 ----
+    .search-result-category,
+    .search-result-tag,
+    .search-result-user,
+    .search-result-group {
+      .search-link {
+        display: flex !important;
+        align-items: center !important;
+        padding: 8px 16px !important;
+        gap: 8px !important;
+        text-decoration: none !important;
+
+        &:hover {
+          background-color: #f5f7fa !important;
+        }
+      }
+    }
+
+    // 搜索提示（初始选项）
+    .search-menu-initial-options {
+      .search-link {
+        padding: 8px 16px !important;
+
+        &:hover {
+          background-color: #f5f7fa !important;
         }
       }
     }
   }
-  
-  // 搜索菜单面板内容
-  .search-menu-panel .panel-body-contents {
-    max-height: 400px !important;
-    overflow-y: auto !important;
-    padding: 0 !important;
-    
+
+  // 搜索提示文字
+  .search-random-quick-tip {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+    color: #999 !important;
+  }
+
+  // "更多结果" 链接
+  .more-link {
+    padding: 8px 16px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+
+    a {
+      color: #3B66F5 !important;
+      font-size: 13px !important;
+      text-decoration: none !important;
+    }
+  }
+
+  // 无结果提示
+  .no-results {
+    padding: 16px !important;
+    color: #999 !important;
+    font-size: 13px !important;
+  }
+
+  // 滚动条
+  .panel-body-contents {
     &::-webkit-scrollbar {
       width: 6px;
     }
-    
+
     &::-webkit-scrollbar-track {
       background: transparent;
     }
-    
+
     &::-webkit-scrollbar-thumb {
       background: rgba(0, 0, 0, 0.08);
       border-radius: 3px;
-      
+
       &:hover {
         background: rgba(0, 0, 0, 0.12);
       }
     }
   }
-  
-  // 加载中状态
+
+  // 加载状态
   .loading {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px 16px !important;
+    padding: 20px 16px !important;
     color: #999 !important;
     font-size: 13px !important;
   }
