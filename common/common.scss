@@ -332,3 +332,34 @@ html body .panel-body-bottom .btn-primary {
     color: #ffffff !important;
   }
 }
+
+// ============================================
+// 隐藏用户菜单中的特定标签页
+// ============================================
+
+// 隐藏 "消息" 标签页 (messages)
+#user-menu-button-messages {
+  display: none !important;
+}
+
+#quick-access-messages {
+  display: none !important;
+}
+
+// 隐藏 "书签" 标签页 (bookmarks)
+#user-menu-button-bookmarks {
+  display: none !important;
+}
+
+#quick-access-bookmarks {
+  display: none !important;
+}
+
+// 隐藏 "其他通知" 标签页 (other-notifications)
+#user-menu-button-other-notifications {
+  display: none !important;
+}
+
+#quick-access-other-notifications {
+  display: none !important;
+}
