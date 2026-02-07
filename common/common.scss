@@ -131,7 +131,9 @@ html body .d-header .search-dropdown,
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 20px !important;
   padding: 0 !important;
-  min-width: 200px !important;
+  min-width: 180px !important;
+  height: 32px !important;
+  margin-right: 12px !important;
   transition: all 0.2s ease !important;
   
   &:hover {
@@ -143,10 +145,11 @@ html body .d-header .search-dropdown,
   .btn {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     background: transparent !important;
     border: none !important;
-    padding: 6px 16px !important;
+    padding: 0 12px !important;
+    height: 100% !important;
     width: 100% !important;
     
     .d-icon {
