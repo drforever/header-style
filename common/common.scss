@@ -144,12 +144,13 @@ html body .d-header .search-dropdown,
   margin-top: auto !important;
   margin-bottom: auto !important;
   transition: all 0.2s ease !important;
+  cursor: pointer !important;
   
   &:hover {
     background: rgba(255, 255, 255, 0.15) !important;
   }
   
-  // 搜索按钮
+  // 搜索按钮 - 只显示图标，缩小占用空间
   #search-button,
   .btn {
     display: flex !important;
@@ -157,59 +158,32 @@ html body .d-header .search-dropdown,
     justify-content: center !important;
     background: transparent !important;
     border: none !important;
-    padding: 0 8px !important;
+    padding: 0 10px !important;
     height: 100% !important;
     width: auto !important;
     min-width: auto !important;
-    pointer-events: auto !important;
     cursor: pointer !important;
+    flex-shrink: 0 !important;
     
     .d-icon {
       color: rgba(255, 255, 255, 0.5) !important;
-      width: 16px !important;
-      height: 16px !important;
+      width: 14px !important;
+      height: 14px !important;
     }
   }
   
-  // 高级搜索按钮 - 保留功能
-  .search-icon,
-  .btn.search-icon {
-    padding: 0 12px !important;
-    
-    &:hover .d-icon {
-      color: rgba(255, 255, 255, 0.8) !important;
-    }
-  }
-  
-  // 清除按钮 - 保留功能
-  .search-clear-button {
-    padding: 0 8px !important;
-    
-    &:hover .d-icon {
-      color: rgba(255, 255, 255, 0.8) !important;
-    }
-  }
-  
-  // 搜索输入框
-  .search-term__input {
-    background: transparent !important;
-    border: none !important;
-    color: #ffffff !important;
-    padding: 0 8px !important;
-    height: 100% !important;
+  // placeholder 文本 - 模拟输入框占位符
+  .search-placeholder-text {
     flex: 1 !important;
-    font-size: 14px !important;
-    outline: none !important;
-    pointer-events: auto !important;
-    
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.4) !important;
-    }
-    
-    &:focus {
-      outline: none !important;
-      background: rgba(255, 255, 255, 0.05) !important;
-    }
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 13px !important;
+    line-height: 32px !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    padding-right: 12px !important;
   }
 }
 
@@ -294,10 +268,9 @@ html body .d-header .btn-flat:hover,
 // 用户下拉菜单样式 - 确保文字可见
 // ============================================
 
-// 最外层下拉菜单容器
+// 最外层下拉菜单容器 - 仅对用户菜单应用
 html body .user-menu.revamped.menu-panel.drop-down,
-html body .user-menu.revamped,
-html body .menu-panel.drop-down {
+html body .user-menu.revamped {
   background-color: #ffffff !important;
   background: #ffffff !important;
   color: #333333 !important;
@@ -326,48 +299,42 @@ html body .panel-body-bottom {
   color: #333333 !important;
 }
 
-// 菜单内所有文字
+// 菜单内所有文字 - 仅对用户菜单应用
 html body .user-menu.revamped *,
-html body .menu-panel.drop-down *,
-html body .panel-body *,
-html body .panel-body-contents *,
-html body .quick-access-panel *,
-html body .menu-tabs-container *,
-html body .panel-body-bottom * {
+html body .user-menu.revamped .panel-body *,
+html body .user-menu.revamped .panel-body-contents *,
+html body .user-menu.revamped .quick-access-panel *,
+html body .user-menu.revamped .menu-tabs-container *,
+html body .user-menu.revamped .panel-body-bottom * {
   color: #333333 !important;
 }
 
-// 菜单内图标
+// 菜单内图标 - 仅对用户菜单应用
 html body .user-menu.revamped .d-icon,
 html body .user-menu.revamped svg,
-html body .menu-panel.drop-down .d-icon,
-html body .menu-panel.drop-down svg,
-html body .panel-body .d-icon,
-html body .panel-body svg,
-html body .quick-access-panel .d-icon,
-html body .quick-access-panel svg {
+html body .user-menu.revamped .panel-body .d-icon,
+html body .user-menu.revamped .panel-body svg,
+html body .user-menu.revamped .quick-access-panel .d-icon,
+html body .user-menu.revamped .quick-access-panel svg {
   color: #333333 !important;
   fill: #333333 !important;
 }
 
-// 菜单内按钮
+// 菜单内按钮 - 仅对用户菜单应用
 html body .user-menu.revamped .btn,
 html body .user-menu.revamped .btn-flat,
-html body .menu-panel.drop-down .btn,
-html body .menu-panel.drop-down .btn-flat,
-html body .panel-body .btn,
-html body .panel-body .btn-flat,
-html body .panel-body-bottom .btn,
-html body .panel-body-bottom .btn-flat {
+html body .user-menu.revamped .panel-body .btn,
+html body .user-menu.revamped .panel-body .btn-flat,
+html body .user-menu.revamped .panel-body-bottom .btn,
+html body .user-menu.revamped .panel-body-bottom .btn-flat {
   background-color: transparent !important;
   color: #333333 !important;
 }
 
-// 主按钮保持蓝色
+// 主按钮保持蓝色 - 仅对用户菜单应用
 html body .user-menu.revamped .btn-primary,
-html body .menu-panel.drop-down .btn-primary,
-html body .panel-body .btn-primary,
-html body .panel-body-bottom .btn-primary {
+html body .user-menu.revamped .panel-body .btn-primary,
+html body .user-menu.revamped .panel-body-bottom .btn-primary {
   background-color: #3B66F5 !important;
   color: #ffffff !important;
   
@@ -377,65 +344,50 @@ html body .panel-body-bottom .btn-primary {
 }
 
 // ============================================
-// 搜索框下拉浮层 - 微博风格交互优化
+// 搜索框下拉浮层样式
 // ============================================
 
-// 搜索框容器
-.search-menu-container.menu-panel-results {
-  position: relative;
-  
-  .search-input-wrapper {
-    position: relative;
-    z-index: 1001;
-  }
-  
-  .search-input {
-    position: relative;
-    
-    // 搜索框获得焦点时的样式
-    &:focus-within {
-      box-shadow: 0 0 0 2px rgba(59, 102, 245, 0.1) !important;
-    }
-  }
-  
-  // 浮层面板
-  .menu-panel {
-    position: fixed !important;
-    top: auto !important;
-    left: 50%;
-    transform: translateX(-50%);
-    right: auto !important;
-    bottom: auto !important;
-    width: calc(100% - 32px) !important;
-    max-width: 420px !important;
-    background: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15) !important;
-    z-index: 1000 !important;
-    margin-top: 8px !important;
-    
-    // 初始隐藏状态
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translateX(-50%) translateY(-8px) scale(0.95) !important;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    
-    .panel-body-contents {
-      max-height: 400px !important;
-      overflow-y: auto !important;
-      padding: 0 !important;
-    }
-  }
+// 搜索菜单主容器
+.glimmer-search-menu {
+  display: block !important;
+  visibility: visible !important;
 }
 
-// 搜索菜单打开时 - 显示浮层
-.search-menu-container:not(.search-menu--inline) .menu-panel {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) scale(1) !important;
+// 搜索菜单容器
+.glimmer-search-menu .search-menu-container {
+  position: relative;
+}
+
+// 搜索输入框包装器
+.glimmer-search-menu .search-input-wrapper {
+  position: relative;
+  z-index: 1001;
+}
+
+// 菜单面板样式
+.glimmer-search-menu .search-menu-panel {
+  position: fixed !important;
+  top: auto !important;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto !important;
+  bottom: auto !important;
+  width: calc(100% - 32px) !important;
+  max-width: 420px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15) !important;
+  z-index: 1000 !important;
+  margin-top: 8px !important;
+  padding: 0 !important;
+}
+
+// 菜单面板内容
+.glimmer-search-menu .search-menu-panel .panel-body-contents {
+  max-height: 400px !important;
+  overflow-y: auto !important;
+  padding: 0 !important;
 }
 
 // 搜索框获得焦点时的样式
@@ -549,19 +501,6 @@ html body .panel-body-bottom .btn-primary {
     padding: 24px 16px !important;
     color: #999 !important;
     font-size: 13px !important;
-  }
-}
-
-// 响应式调整
-@media (max-width: 640px) {
-  .search-menu-container.menu-panel-results {
-    .menu-panel {
-      width: 100vw !important;
-      max-width: 100vw !important;
-      left: 0 !important;
-      transform: translateX(0) translateY(-8px) scale(0.95) !important;
-      border-radius: 0 12px 12px 0 !important;
-    }
   }
 }
 
