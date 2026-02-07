@@ -143,6 +143,7 @@ html body .d-header .search-dropdown,
   .btn {
     display: flex !important;
     align-items: center !important;
+    justify-content: center !important;
     background: transparent !important;
     border: none !important;
     padding: 6px 16px !important;
@@ -150,15 +151,6 @@ html body .d-header .search-dropdown,
     
     .d-icon {
       color: rgba(255, 255, 255, 0.5) !important;
-      margin-right: 8px !important;
-    }
-    
-    // 添加占位文字
-    &::after {
-      content: "搜索话题..." !important;
-      color: rgba(255, 255, 255, 0.5) !important;
-      font-size: 14px !important;
-      font-weight: normal !important;
     }
   }
 }
