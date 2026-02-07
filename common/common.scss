@@ -117,7 +117,41 @@ html body .d-header .btn-flat,
 // 搜索图标
 .d-header .search-dropdown .d-icon,
 .d-header .search-button .d-icon {
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+// ============================================
+// 搜索框样式 - 圆角输入框样式
+// ============================================
+html body .d-header .search-dropdown,
+html body .d-header #search-button,
+.d-header .search-dropdown,
+.d-header #search-button {
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  min-width: 200px !important;
+  transition: all 0.2s ease !important;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+  
+  .d-icon {
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin-right: 8px !important;
+  }
+  
+  // 添加占位文字
+  &::after {
+    content: "搜索话题..." !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+  }
 }
 
 // 用户头像边框
