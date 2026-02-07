@@ -145,47 +145,62 @@ html body .d-header .btn-flat:hover,
 // 用户下拉菜单样式 - 确保文字可见
 // ============================================
 
-// 通用下拉面板
-.menu-panel,
-.user-menu,
-.fk-d-menu__content {
+// Discourse 新版用户菜单（使用 fk-d-menu 组件）
+html body .fk-d-menu,
+html body .fk-d-menu__content,
+html body .fk-d-menu__inner-content,
+html body .user-menu,
+html body .menu-panel,
+html body [data-identifier="user-menu"],
+html body .revamped-user-menu-wrapper {
   background-color: #ffffff !important;
   background: #ffffff !important;
-}
-
-// 用户菜单内所有元素的颜色
-.menu-panel *,
-.user-menu *,
-.fk-d-menu__content * {
   color: #333333 !important;
 }
 
-// 用户菜单内的图标
-.menu-panel .d-icon,
-.menu-panel svg.d-icon,
-.user-menu .d-icon,
-.user-menu svg.d-icon,
-.fk-d-menu__content .d-icon,
-.fk-d-menu__content svg.d-icon {
+// 菜单内所有文字
+html body .fk-d-menu *:not(.d-header *),
+html body .fk-d-menu__content *,
+html body .user-menu *,
+html body .menu-panel *,
+html body [data-identifier="user-menu"] *,
+html body .revamped-user-menu-wrapper * {
+  color: #333333 !important;
+}
+
+// 菜单内图标
+html body .fk-d-menu .d-icon,
+html body .fk-d-menu svg,
+html body .fk-d-menu__content .d-icon,
+html body .fk-d-menu__content svg,
+html body .user-menu .d-icon,
+html body .user-menu svg,
+html body .menu-panel .d-icon,
+html body .menu-panel svg {
   color: #333333 !important;
   fill: #333333 !important;
 }
 
-// 菜单内按钮背景保持透明或白色
-.menu-panel .btn,
-.menu-panel .btn-flat,
-.user-menu .btn,
-.user-menu .btn-flat,
-.fk-d-menu__content .btn,
-.fk-d-menu__content .btn-flat {
+// 菜单内按钮
+html body .fk-d-menu .btn,
+html body .fk-d-menu .btn-flat,
+html body .fk-d-menu__content .btn,
+html body .fk-d-menu__content .btn-flat,
+html body .user-menu .btn,
+html body .user-menu .btn-flat {
   background-color: transparent !important;
   color: #333333 !important;
 }
 
-// 特殊按钮（如蓝色主按钮）保持原有样式
-.menu-panel .btn-primary,
-.user-menu .btn-primary,
-.fk-d-menu__content .btn-primary {
-  background-color: var(--tertiary, #3B66F5) !important;
+// 主按钮保持蓝色
+html body .fk-d-menu .btn-primary,
+html body .fk-d-menu__content .btn-primary,
+html body .user-menu .btn-primary,
+html body .menu-panel .btn-primary {
+  background-color: #3B66F5 !important;
   color: #ffffff !important;
+  
+  * {
+    color: #ffffff !important;
+  }
 }
