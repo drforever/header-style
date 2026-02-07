@@ -69,6 +69,8 @@ html body .d-header .text-logo,
   display: flex !important;
   align-items: center !important;
   line-height: 1 !important;
+  vertical-align: middle !important;
+  margin-top: -2px !important;
 }
 
 // 所有图标 - 使用最广泛的选择器
