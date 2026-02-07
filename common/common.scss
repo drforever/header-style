@@ -39,6 +39,28 @@ html body .d-header .title .header-title,
   font-family: 'CustomTitle', sans-serif !important;
 }
 
+// 站点标题容器 - 图标和文字垂直居中对齐
+html body .d-header .title,
+.d-header .title {
+  display: flex !important;
+  align-items: center !important;
+}
+
+html body .d-header .logo-wrapper,
+.d-header .logo-wrapper,
+html body .d-header .home-logo-wrapper-outlet,
+.d-header .home-logo-wrapper-outlet {
+  display: flex !important;
+  align-items: center !important;
+}
+
+html body .d-header .title a,
+.d-header .title a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px;
+}
+
 // 所有图标 - 使用最广泛的选择器
 html body .d-header .d-icon,
 .d-header .d-icon,
