@@ -61,6 +61,16 @@ html body .d-header .title a,
   gap: 8px;
 }
 
+// 站点文字Logo垂直居中
+html body .d-header #site-text-logo,
+.d-header #site-text-logo,
+html body .d-header .text-logo,
+.d-header .text-logo {
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+}
+
 // 所有图标 - 使用最广泛的选择器
 html body .d-header .d-icon,
 .d-header .d-icon,
