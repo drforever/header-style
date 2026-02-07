@@ -141,55 +141,51 @@ html body .d-header .btn-flat:hover,
   background: transparent !important;
 }
 
-// 下拉面板保持正常颜色（不受导航栏影响）
-// 注意：只针对弹出的下拉菜单内容，不影响触发按钮
+// ============================================
+// 用户下拉菜单样式 - 确保文字可见
+// ============================================
+
+// 通用下拉面板
 .menu-panel,
 .user-menu,
-.user-menu-dropdown-wrapper,
-.glimmer-dropdown-menu {
-  background-color: var(--secondary, #ffffff) !important;
-  background: var(--secondary, #ffffff) !important;
-  
-  // 所有文字和链接
-  color: var(--primary, #333333) !important;
-  
-  .d-icon,
-  svg.d-icon {
-    color: var(--primary, #333333) !important;
-    fill: var(--primary, #333333) !important;
-  }
-  
-  a, button:not(.d-header *), .btn:not(.d-header *), span, div, li, .menu-item, .user-menu-item {
-    color: var(--primary, #333333) !important;
-  }
-  
-  // 用户菜单项
-  .quick-access-panel,
-  .user-menu-links,
-  .user-menu-link,
-  .user-preferences-link,
-  .logout-link,
-  .tabs-list,
-  .btn-flat {
-    color: var(--primary, #333333) !important;
-    background-color: transparent !important;
-    
-    .d-icon {
-      color: var(--primary, #333333) !important;
-    }
-  }
+.fk-d-menu__content {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
 }
 
-// 用户菜单下拉内容 - 使用更精确的选择器
-.fk-d-menu__content.user-menu {
-  background-color: var(--secondary, #ffffff) !important;
-  
-  * {
-    color: var(--primary, #333333) !important;
-  }
-  
-  .d-icon {
-    color: var(--primary, #333333) !important;
-    fill: var(--primary, #333333) !important;
-  }
+// 用户菜单内所有元素的颜色
+.menu-panel *,
+.user-menu *,
+.fk-d-menu__content * {
+  color: #333333 !important;
+}
+
+// 用户菜单内的图标
+.menu-panel .d-icon,
+.menu-panel svg.d-icon,
+.user-menu .d-icon,
+.user-menu svg.d-icon,
+.fk-d-menu__content .d-icon,
+.fk-d-menu__content svg.d-icon {
+  color: #333333 !important;
+  fill: #333333 !important;
+}
+
+// 菜单内按钮背景保持透明或白色
+.menu-panel .btn,
+.menu-panel .btn-flat,
+.user-menu .btn,
+.user-menu .btn-flat,
+.fk-d-menu__content .btn,
+.fk-d-menu__content .btn-flat {
+  background-color: transparent !important;
+  color: #333333 !important;
+}
+
+// 特殊按钮（如蓝色主按钮）保持原有样式
+.menu-panel .btn-primary,
+.user-menu .btn-primary,
+.fk-d-menu__content .btn-primary {
+  background-color: var(--tertiary, #3B66F5) !important;
+  color: #ffffff !important;
 }
