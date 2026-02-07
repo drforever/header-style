@@ -68,9 +68,19 @@ html body .d-header .text-logo,
 .d-header .text-logo {
   display: flex !important;
   align-items: center !important;
-  line-height: 1 !important;
+  line-height: normal !important;
   vertical-align: middle !important;
-  margin-top: -2px !important;
+  overflow: visible !important;
+}
+
+// 确保标题容器不截断内容
+html body .d-header .title,
+.d-header .title,
+html body .d-header .title a,
+.d-header .title a,
+html body .d-header .home-logo-wrapper-outlet,
+.d-header .home-logo-wrapper-outlet {
+  overflow: visible !important;
 }
 
 // 所有图标 - 使用最广泛的选择器
