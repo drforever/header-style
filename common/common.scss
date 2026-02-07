@@ -183,20 +183,24 @@ html body .d-header .icons,
   border-radius: 50%;
 }
 
-// 匿名模式按钮 - 非激活状态
+// 匿名模式按钮 - 圆角透明样式（与搜索框一致）
 html body .d-header .anonymous-toggle-btn,
 .d-header .anonymous-toggle-btn {
-  border-color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 0 16px !important;
+  height: 32px !important;
   color: #ffffff !important;
-  background-color: transparent !important;
-  background: transparent !important;
+  transition: all 0.2s ease !important;
   
   .d-icon {
     color: #ffffff !important;
   }
   
   &:hover {
-    background-color: rgba(255, 255, 255, 0.15) !important;
     background: rgba(255, 255, 255, 0.15) !important;
   }
 }
@@ -204,17 +208,15 @@ html body .d-header .anonymous-toggle-btn,
 // 匿名模式按钮 - 激活状态
 html body .d-header .anonymous-toggle-btn.is-anonymous,
 .d-header .anonymous-toggle-btn.is-anonymous {
-  background-color: transparent !important;
-  background: transparent !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #ffffff !important;
-  border: none !important;
   
   .d-icon {
     color: #ffffff !important;
   }
   
   &:hover {
-    background-color: rgba(255, 255, 255, 0.15) !important;
     background: rgba(255, 255, 255, 0.15) !important;
   }
 }
