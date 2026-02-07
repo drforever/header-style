@@ -123,6 +123,13 @@ html body .d-header .btn-flat,
 // ============================================
 // 搜索框样式 - 圆角输入框样式
 // ============================================
+
+// 搜索框父容器垂直居中
+html body .d-header .icons .search-dropdown,
+.d-header .icons .search-dropdown {
+  align-self: center !important;
+}
+
 html body .d-header .search-dropdown,
 .d-header .search-dropdown {
   display: flex !important;
@@ -134,6 +141,8 @@ html body .d-header .search-dropdown,
   min-width: 180px !important;
   height: 32px !important;
   margin-right: 12px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
   transition: all 0.2s ease !important;
   
   &:hover {
@@ -154,8 +163,16 @@ html body .d-header .search-dropdown,
     
     .d-icon {
       color: rgba(255, 255, 255, 0.5) !important;
+      margin-right: auto !important;
     }
   }
+}
+
+// 确保图标列表垂直居中
+html body .d-header .icons,
+.d-header .icons {
+  display: flex !important;
+  align-items: center !important;
 }
 
 // 用户头像边框
