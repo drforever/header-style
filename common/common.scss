@@ -138,15 +138,56 @@ html body .d-header .btn-flat:hover,
 .d-header .user-menu,
 .d-header .search-menu,
 .menu-panel,
-.user-menu {
+.user-menu,
+.user-menu-dropdown-wrapper,
+.glimmer-dropdown-menu,
+.dropdown-menu,
+.fk-d-menu__content {
   background-color: var(--secondary, #ffffff) !important;
   background: var(--secondary, #ffffff) !important;
   
-  .d-icon {
+  // 所有文字和链接
+  color: var(--primary, #333333) !important;
+  
+  .d-icon,
+  svg.d-icon {
+    color: var(--primary, #333333) !important;
+    fill: var(--primary, #333333) !important;
+  }
+  
+  a, button, .btn, span, div, li, .menu-item, .user-menu-item {
     color: var(--primary, #333333) !important;
   }
   
-  a, button, .btn {
+  // 用户菜单项
+  .quick-access-panel,
+  .user-menu-links,
+  .user-menu-link,
+  .user-preferences-link,
+  .logout-link,
+  .tabs-list,
+  .btn-flat {
     color: var(--primary, #333333) !important;
+    
+    .d-icon {
+      color: var(--primary, #333333) !important;
+    }
+  }
+}
+
+// 确保用户菜单下拉内容可见
+html body .user-menu .user-menu-dropdown,
+html body .fk-d-menu[data-identifier="user-menu"] .fk-d-menu__content,
+html body [data-identifier="user-menu"],
+.user-menu-panel {
+  background-color: var(--secondary, #ffffff) !important;
+  
+  * {
+    color: var(--primary, #333333) !important;
+  }
+  
+  .d-icon {
+    color: var(--primary, #333333) !important;
+    fill: var(--primary, #333333) !important;
   }
 }
