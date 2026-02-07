@@ -133,16 +133,20 @@ html body .d-header .btn-flat:hover,
   }
 }
 
+// 导航栏上的头像按钮 - 保持透明背景
+.d-header .current-user,
+.d-header .header-dropdown-toggle,
+.d-header .btn.no-text.icon.btn-flat {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
 // 下拉面板保持正常颜色（不受导航栏影响）
-.d-header .menu-panel,
-.d-header .user-menu,
-.d-header .search-menu,
+// 注意：只针对弹出的下拉菜单内容，不影响触发按钮
 .menu-panel,
 .user-menu,
 .user-menu-dropdown-wrapper,
-.glimmer-dropdown-menu,
-.dropdown-menu,
-.fk-d-menu__content {
+.glimmer-dropdown-menu {
   background-color: var(--secondary, #ffffff) !important;
   background: var(--secondary, #ffffff) !important;
   
@@ -155,7 +159,7 @@ html body .d-header .btn-flat:hover,
     fill: var(--primary, #333333) !important;
   }
   
-  a, button, .btn, span, div, li, .menu-item, .user-menu-item {
+  a, button:not(.d-header *), .btn:not(.d-header *), span, div, li, .menu-item, .user-menu-item {
     color: var(--primary, #333333) !important;
   }
   
@@ -168,6 +172,7 @@ html body .d-header .btn-flat:hover,
   .tabs-list,
   .btn-flat {
     color: var(--primary, #333333) !important;
+    background-color: transparent !important;
     
     .d-icon {
       color: var(--primary, #333333) !important;
@@ -175,11 +180,8 @@ html body .d-header .btn-flat:hover,
   }
 }
 
-// 确保用户菜单下拉内容可见
-html body .user-menu .user-menu-dropdown,
-html body .fk-d-menu[data-identifier="user-menu"] .fk-d-menu__content,
-html body [data-identifier="user-menu"],
-.user-menu-panel {
+// 用户菜单下拉内容 - 使用更精确的选择器
+.fk-d-menu__content.user-menu {
   background-color: var(--secondary, #ffffff) !important;
   
   * {
