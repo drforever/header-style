@@ -68,9 +68,12 @@ html body .d-header .text-logo,
 .d-header .text-logo {
   display: flex !important;
   align-items: center !important;
-  line-height: normal !important;
+  line-height: 1.2 !important;
   vertical-align: middle !important;
   overflow: visible !important;
+  padding-bottom: 4px !important;
+  height: auto !important;
+  min-height: 1.5em !important;
 }
 
 // 确保标题容器不截断内容
