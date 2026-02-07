@@ -145,58 +145,56 @@ html body .d-header .btn-flat:hover,
 // 用户下拉菜单样式 - 确保文字可见
 // ============================================
 
-// Discourse 新版用户菜单（使用 fk-d-menu 组件）
-html body .fk-d-menu,
-html body .fk-d-menu__content,
-html body .fk-d-menu__inner-content,
+// 下拉面板容器
+html body .panel-body,
+html body .panel-body-contents,
+html body .menu-tabs-container,
+html body .quick-access-panel,
+html body .panel-body-bottom,
 html body .user-menu,
-html body .menu-panel,
-html body [data-identifier="user-menu"],
-html body .revamped-user-menu-wrapper {
+html body .menu-panel {
   background-color: #ffffff !important;
   background: #ffffff !important;
   color: #333333 !important;
 }
 
 // 菜单内所有文字
-html body .fk-d-menu *:not(.d-header *),
-html body .fk-d-menu__content *,
-html body .user-menu *,
-html body .menu-panel *,
-html body [data-identifier="user-menu"] *,
-html body .revamped-user-menu-wrapper * {
+html body .panel-body *,
+html body .panel-body-contents *,
+html body .quick-access-panel *,
+html body .menu-tabs-container *,
+html body .panel-body-bottom * {
   color: #333333 !important;
 }
 
 // 菜单内图标
-html body .fk-d-menu .d-icon,
-html body .fk-d-menu svg,
-html body .fk-d-menu__content .d-icon,
-html body .fk-d-menu__content svg,
-html body .user-menu .d-icon,
-html body .user-menu svg,
-html body .menu-panel .d-icon,
-html body .menu-panel svg {
+html body .panel-body .d-icon,
+html body .panel-body svg,
+html body .panel-body-contents .d-icon,
+html body .panel-body-contents svg,
+html body .quick-access-panel .d-icon,
+html body .quick-access-panel svg,
+html body .menu-tabs-container .d-icon,
+html body .menu-tabs-container svg {
   color: #333333 !important;
   fill: #333333 !important;
 }
 
 // 菜单内按钮
-html body .fk-d-menu .btn,
-html body .fk-d-menu .btn-flat,
-html body .fk-d-menu__content .btn,
-html body .fk-d-menu__content .btn-flat,
-html body .user-menu .btn,
-html body .user-menu .btn-flat {
+html body .panel-body .btn,
+html body .panel-body .btn-flat,
+html body .panel-body-contents .btn,
+html body .panel-body-contents .btn-flat,
+html body .panel-body-bottom .btn,
+html body .panel-body-bottom .btn-flat {
   background-color: transparent !important;
   color: #333333 !important;
 }
 
 // 主按钮保持蓝色
-html body .fk-d-menu .btn-primary,
-html body .fk-d-menu__content .btn-primary,
-html body .user-menu .btn-primary,
-html body .menu-panel .btn-primary {
+html body .panel-body .btn-primary,
+html body .panel-body-contents .btn-primary,
+html body .panel-body-bottom .btn-primary {
   background-color: #3B66F5 !important;
   color: #ffffff !important;
   
