@@ -1,4 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
+import DiscourseURL from "discourse/lib/url";
 
 export default apiInitializer("0.8", (api) => {
   const currentUser = api.getCurrentUser();
@@ -18,8 +19,8 @@ export default apiInitializer("0.8", (api) => {
       e.stopPropagation();
       e.stopImmediatePropagation();
       
-      // 跳转到用户账户设置页
-      window.location.href = `/u/${currentUser.username}/preferences/account`;
+      // 使用 Discourse 路由进行局部刷新跳转
+      DiscourseURL.routeTo(`/u/${currentUser.username}/preferences/account`);
     }, true);
   }
 
