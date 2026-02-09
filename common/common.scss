@@ -730,3 +730,36 @@ html body .user-menu.revamped .panel-body-bottom .btn-primary {
 #quick-access-other-notifications {
   display: none !important;
 }
+
+// ============================================
+// 头像后面显示用户名
+// ============================================
+.header-username {
+  display: flex !important;
+  align-items: center !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  margin-left: 8px !important;
+  white-space: nowrap !important;
+  max-width: 120px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+// 匿名模式时隐藏用户名
+body.anonymous-mode .header-username,
+html body.anonymous-mode .header-username {
+  display: none !important;
+}
+
+// 右侧导航面板整体左移
+.d-header .panel {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+// 图标区域紧凑
+.d-header .icons.d-header-icons {
+  margin-left: 8px !important;
+}
